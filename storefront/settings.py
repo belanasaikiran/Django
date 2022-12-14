@@ -34,9 +34,10 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    # 'django.contrib.sessions', # disable for now since it's not used anymore - temporary memory on server for managing users
+    'django.contrib.messages', # used for displaying One time notifications
+    'django.contrib.staticfiles', # provides css, html static files
+    'playground' # we just added it because we created the new app using "python manage.py startapp playground"
 ]
 
 MIDDLEWARE = [
