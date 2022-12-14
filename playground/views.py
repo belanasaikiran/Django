@@ -18,4 +18,17 @@ def say_hello(request):
 
 
 
+
+def calculate():
+    x = 1
+    y = 2
+    return x
+
+
+def numbers(request):
+    x = calculate()
+    return render(request, 'hello.html', {'name': 'sanju', 'x': x})
+
+
+
 # now we need to map this URL to call this function

@@ -37,10 +37,18 @@ INSTALLED_APPS = [
     # 'django.contrib.sessions', # disable for now since it's not used anymore - temporary memory on server for managing users
     'django.contrib.messages', # used for displaying One time notifications
     'django.contrib.staticfiles', # provides css, html static files
-    'playground' # we just added it because we created the new app using "python manage.py startapp playground"
+    'playground', # we just added it because we created the new app using "python manage.py startapp playground"
+    # custom debug toolbar below
+    'debug_toolbar', # installed with "python -m pip install django-debug-toolbar"
+
+    # new apps
+    'store',
+    'tags'
 ]
 
 MIDDLEWARE = [
+    # ... custom debug tool here
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -48,6 +56,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+
+#  for running debug_toolbar on localhost
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
 ]
 
 ROOT_URLCONF = 'storefront.urls'
